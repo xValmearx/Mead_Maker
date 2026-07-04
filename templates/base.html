@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<htmllang="en">
+<head>
+<metacharset="utf-8">
+
+<title>
+        {% block title %}
+        App Name Here
+        {% endblock title %}
+</title>
+
+    {% load static %}
+
+<link rel="stylesheet"href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+
+        {% if user.is_authenticated %}
+            <a href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+            <a href="{% url 'login' %}">Log In</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+    </nav>
+</header>
+
+<main>
+        {% block content %}
+        Stuff Goes Here
+        {% endblock content %}
+</main>
+
+</body>
+</html>

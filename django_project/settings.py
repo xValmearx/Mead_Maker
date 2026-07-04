@@ -61,7 +61,7 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR/"templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,3 +125,18 @@ STATIC_URL = 'static/'
 
 # Delcare is the custom user model that Django should use.
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+STATIC_URL="static/"
+
+STATICFILES_DIRS= [
+	BASE_DIR/"static",
+]
+
+# Where users go after logging in
+LOGIN_REDIRECT_URL="home"
+
+# Where users go after logging out
+LOGOUT_REDIRECT_URL="login"
+
+# Default login page
+LOGIN_URL="login"
