@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     # self created apps
     'pages.apps.PagesConfig',
+    'accounts.apps.AccountsConfig',
 
     # third party apps
 ]
@@ -121,3 +122,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Delcare is the custom user model that Django should use.
+AUTH_USER_MODEL = "accounts.CustomUser"
