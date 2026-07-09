@@ -7,11 +7,11 @@
 {% block content %}
     <h2>Log In</h2>
 
-    <formmethod="POST">
+    <form method="POST">
         {% csrf_token %}
 
         {{ form.as_p }}
 
-    <buttontype="submit">Log In</button>
+    <button type="submit">Log In</button>
     </form>
 {% endblock content %}

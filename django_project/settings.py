@@ -136,7 +136,7 @@ STATICFILES_DIRS= [
 LOGIN_REDIRECT_URL="home"
 
 # Where users go after logging out
-LOGOUT_REDIRECT_URL="login"
+LOGOUT_REDIRECT_URL="home"
 
 # Default login page
 LOGIN_URL="login"
