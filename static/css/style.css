@@ -9,20 +9,24 @@
     --color-1:#ffffff;
     --color-2:#ebe7e7;
     --color-3:#d0cece;
+    --color-4:#000000;
 
     --width-1:2vw;
     --width-2:4vw;
     --width-3:8vw;
 
-    --gap-1: 12px;
+    --pading-1:10px;
+    --padding-2:20px;
 
+    --gap-1: 1rem;
+
+    --border-size-1:2px;
+    --border-size-2:4px;
+    --border-size-3:6px;
+
+    --border-radius-1:8px;
 
 }
-
-
-
-
-
 
 
 
@@ -47,7 +51,7 @@ body {
 
 nav {
     display: flex;
-    gap: 1rem;
+    gap: var(--gap-1);
     align-items: center;
 
     height: 8vh;
@@ -56,46 +60,41 @@ nav {
     margin-left: var(--width-1);
     margin-right: var(--width-1);
 
+    padding-left: var(--pading-1);
+
+
     background-color: var(--color-2);
-
-    border: solid var(--color-2) 3px;
-    border-bottom: solid var(--color-3) 4px;
-
-    border-radius: 3px;
+ 
+    border: solid var(--color-2) var(--border-size-1);
+    border-bottom: solid var(--color-3) var(--border-size-2);
+    border-radius: var(--border-radius-1);
 }
 
-.nav-form {
-    display: inline;
-}
-
-nav a,
-.nav-form button {
+.button-black{
     display: inline-block;
 
-    padding: 10px 20px;
+    padding: var(--pading-1) var(--padding-2);
 
     text-decoration: none;
-    color: black;
+    color: var(--color-4);
     font: inherit;
 
-    background: white;
+    background: var(--color-1);
     cursor: pointer;
 
-    border: 2px solid black;
-    border-bottom: 4px solid black;
-    border-radius: 8px;
+    border: var(--border-size-1) solid var(--color-4);
+    border-bottom: var(--border-size-2) solid var(--color-4);
+    border-radius: var(--border-radius-1);
 
     transition: all 0.15s ease;
 }
 
-nav a:hover,
-.nav-form button:hover {
+.button-black:hover{
     transform: translateY(2px);
-    border-bottom-width: 2px;
+    border-bottom-width: var(--border-size-1);
+}
+.button-black:active{
+    transform: translateY(4px);
+    border-bottom-width: var(--border-size-1);
 }
 
-nav a:active,
-.nav-form button:active {
-    transform: translateY(4px);
-    border-bottom-width: 2px;
-}

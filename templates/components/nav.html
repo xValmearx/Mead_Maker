@@ -1,0 +1,15 @@
+<nav>
+    <a class="button-black" href="{% url 'home' %}">Home</a>
+
+    {% if user.is_authenticated %}
+        <form action="{% url 'logout' %}" method="post">
+            {% csrf_token %}
+            <button class="button-black" type="submit">Log Out</button>
+        </form>
+
+    {% else %}
+        <a class="button-black" href="{% url 'login' %}">Log In</a>
+        <a class="button-black" href="{% url 'signup' %}">Sign Up</a>
+        
+    {% endif %}
+</nav>
