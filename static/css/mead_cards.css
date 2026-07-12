@@ -1,0 +1,266 @@
+:root{
+    --color-1:#ffffff;
+    --color-2:#ebe7e7;
+    --color-3:#d0cece;
+    --color-4:#000000;
+
+
+
+    --width-1:2vw;
+    --width-2:4vw;
+    --width-3:8vw;
+
+    --pading-1:10px;
+    --padding-2:20px;
+
+    --gap-1: 1rem;
+
+    --border-size-1:2px;
+    --border-size-2:4px;
+    --border-size-3:6px;
+
+    --border-radius-1:8px;
+
+    /* Traditional */
+    --traditional-primary: #D4A017;
+    --traditional-dark: #A97C10;
+
+    /* Sack */
+    --sack-primary: #B8860B;
+    --sack-dark: #8A6508;
+
+    /* Braggot */
+    --braggot-primary: #8B5A2B;
+    --braggot-dark: #68411E;
+
+    /* Spiced */
+    --spiced-primary: #C65D1E;
+    --spiced-dark: #964414;
+
+    /* Blueberry */
+    --blueberry-primary: #4B5CC4;
+    --blueberry-dark: #37459A;
+
+    /* Blackberry */
+    --blackberry-primary: #5B2C83;
+    --blackberry-dark: #411F5F;
+
+    /* Strawberry */
+    --strawberry-primary: #E63946;
+    --strawberry-dark: #B72836;
+
+    /* Grape */
+    --grape-primary: #7B3FB3;
+    --grape-dark: #5B2E86;
+
+    /* Orange */
+    --orange-primary: #F57C00;
+    --orange-dark: #C46000;
+
+    /* Lavender */
+    --lavender-primary: #9B7EDC;
+    --lavender-dark: #745DB1;
+
+    /* Cherry */
+    --cherry-primary: #B71C3A;
+    --cherry-dark: #8A142C;
+
+    /* Cider */
+    --cider-primary: #C98A2E;
+    --cider-dark: #9D681F;
+
+}
+
+
+.card{
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    background-color: var(--color-2);
+
+    padding-top: 20px;
+    padding-left: var(--pading-1);
+    padding-right: var(--pading-1);
+
+    border: var(--border-size-2) solid var(--color-2);
+    border-bottom: var(--border-size-3) solid var(--color-3);
+    border-radius: var(--border-radius-1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.card h1{
+    width: 100%;
+    justify-self: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.card p{
+    justify-self: center;
+    text-align: center;
+}
+
+
+.card-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    width: 100%;
+}
+
+
+.card.traditional{
+    background-color: var(--traditional-primary) ;
+    border: var(--border-size-2) solid var(--traditional-primary) ;
+    border-bottom: var(--border-size-3) solid var(--traditional-dark) ;
+}
+
+.card.traditional h1{
+    background-color: var(--traditional-dark);
+    border: var(--border-size-2) solid var(--traditional-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.sack{
+    background-color: var(--sack-primary) ;
+    border: var(--border-size-2) solid var(--sack-primary) ;
+    border-bottom: var(--border-size-3) solid var(--sack-dark) ;
+}
+
+.card.sack h1{
+    background-color: var(--sack-dark);
+    border: var(--border-size-2) solid var(--sack-dark);
+    border-radius: var(--border-radius-1);
+}
+
+
+.card.braggot{
+    background-color: var(--braggot-primary) ;
+    border: var(--border-size-2) solid var(--braggot-primary) ;
+    border-bottom: var(--border-size-3) solid var(--braggot-dark) ;
+}
+
+.card.braggot h1{
+    background-color: var(--braggot-dark);
+    border: var(--border-size-2) solid var(--braggot-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.spiced{
+    background-color: var(--spiced-primary) ;
+    border: var(--border-size-2) solid var(--spiced-primary) ;
+    border-bottom: var(--border-size-3) solid var(--spiced-dark) ;
+}
+
+.card.spiced h1{
+    background-color: var(--spiced-dark);
+    border: var(--border-size-2) solid var(--spiced-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.blueberry{
+    background-color: var(--blueberry-primary) ;
+    border: var(--border-size-2) solid var(--blueberry-primary) ;
+    border-bottom: var(--border-size-3) solid var(--blueberry-dark) ;
+}
+
+.card.blueberry h1{
+    background-color: var(--blueberry-dark);
+    border: var(--border-size-2) solid var(--blueberry-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.blackberry{
+    background-color: var(--blackberry-primary) ;
+    border: var(--border-size-2) solid var(--blackberry-primary) ;
+    border-bottom: var(--border-size-3) solid var(--blackberry-dark) ;
+}
+
+.card.blackberry h1{
+    background-color: var(--blackberry-dark);
+    border: var(--border-size-2) solid var(--blackberry-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.strawberry{
+    background-color: var(--strawberry-primary) ;
+    border: var(--border-size-2) solid var(--strawberry-primary) ;
+    border-bottom: var(--border-size-3) solid var(--strawberry-dark) ;
+}
+
+.card.strawberry h1{
+    background-color: var(--strawberry-dark);
+    border: var(--border-size-2) solid var(--strawberry-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.grape{
+    background-color: var(--grape-primary) ;
+    border: var(--border-size-2) solid var(--grape-primary) ;
+    border-bottom: var(--border-size-3) solid var(--grape-dark) ;
+}
+
+.card.grape h1{
+    background-color: var(--grape-dark);
+    border: var(--border-size-2) solid var(--grape-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.orange{
+    background-color: var(--orange-primary) ;
+    border: var(--border-size-2) solid var(--orange-primary) ;
+    border-bottom: var(--border-size-3) solid var(--orange-dark) ;
+}
+
+.card.orange h1{
+    background-color: var(--orange-dark);
+    border: var(--border-size-2) solid var(--orange-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.lavender{
+    background-color: var(--lavender-primary) ;
+    border: var(--border-size-2) solid var(--lavender-primary) ;
+    border-bottom: var(--border-size-3) solid var(--lavender-dark) ;
+}
+
+.card.lavender h1{
+    background-color: var(--lavender-dark);
+    border: var(--border-size-2) solid var(--lavender-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.cherry{
+    background-color: var(--cherry-primary) ;
+    border: var(--border-size-2) solid var(--cherry-primary) ;
+    border-bottom: var(--border-size-3) solid var(--cherry-dark) ;
+}
+
+.card.cherry h1{
+    background-color: var(--cherry-dark);
+    border: var(--border-size-2) solid var(--cherry-dark);
+    border-radius: var(--border-radius-1);
+}
+
+.card.cider{
+    background-color: var(--cider-primary) ;
+    border: var(--border-size-2) solid var(--cider-primary) ;
+    border-bottom: var(--border-size-3) solid var(--cider-dark) ;
+}
+
+.card.cider h1{
+    background-color: var(--cider-dark);
+    border: var(--border-size-2) solid var(--cider-dark);
+    border-radius: var(--border-radius-1);
+}

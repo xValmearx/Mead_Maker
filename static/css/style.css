@@ -11,6 +11,8 @@
     --color-3:#d0cece;
     --color-4:#000000;
 
+
+
     --width-1:2vw;
     --width-2:4vw;
     --width-3:8vw;
@@ -55,11 +57,8 @@ nav {
     align-items: center;
 
     height: 8vh;
-
-    margin-top: 2px;
-    margin-left: var(--width-1);
-    margin-right: var(--width-1);
-
+    left: var(--width-1);
+    right: var(--width-1);
     padding-left: var(--pading-1);
 
 
@@ -68,6 +67,10 @@ nav {
     border: solid var(--color-2) var(--border-size-1);
     border-bottom: solid var(--color-3) var(--border-size-2);
     border-radius: var(--border-radius-1);
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
 }
 
 .button-black{
@@ -93,8 +96,23 @@ nav {
     transform: translateY(2px);
     border-bottom-width: var(--border-size-1);
 }
+
 .button-black:active{
     transform: translateY(4px);
     border-bottom-width: var(--border-size-1);
 }
 
+
+
+
+.section{
+    margin-top: 20px;
+    margin-left: var(--width-1);
+    margin-right: var(--width-1);
+}
+
+.hero{
+    height: 100vh;
+
+    background-color: red;
+}
