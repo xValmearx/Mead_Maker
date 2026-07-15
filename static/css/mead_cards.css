@@ -72,9 +72,13 @@
 }
 
 
-.card{
+.card {
     width: 100%;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 3 / 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background-color: var(--color-2);
 
@@ -87,7 +91,6 @@
     border-radius: var(--border-radius-1);
 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-
 }
 
 .card:hover {
@@ -100,6 +103,15 @@
     justify-self: center;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.card-icon {
+    width: 140px;
+    height: 140px;
+
+    object-fit: contain;
+
+    margin-bottom: 1rem;
 }
 
 .card p{
