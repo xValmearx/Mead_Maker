@@ -4,6 +4,7 @@ class MeadCard extends HTMLElement {
         const type = this.getAttribute("type") || "";
         const name = this.getAttribute("name") || "Blank";
         const icon = this.getAttribute("icon") || "";
+        const dialog = this.getAttribute("dialog") || "";
 
         if(icon == ""){
             this.innerHTML = `
@@ -11,7 +12,7 @@ class MeadCard extends HTMLElement {
 
                 <h1>${name}</h1>
 
-                <p>This is the card's information.</p>
+                <p>${dialog}</p>
             </div>
         `;
         }
@@ -23,7 +24,7 @@ class MeadCard extends HTMLElement {
 
                 <img class="card-icon" src="${icon}" alt="${name} icon">
 
-                <p>This is the card's information.</p>
+                <p>${dialog}</p>
             </div>
         `;
         }
