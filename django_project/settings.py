@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # self created apps
     'pages.apps.PagesConfig',
     'accounts.apps.AccountsConfig',
+    'recipes.apps.RecipesConfig',
 
     # third party apps
 ]

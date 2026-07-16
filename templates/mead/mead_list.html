@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Your Meads
+{% endblock title %}
+
+{% block content %}
+
+    {% for mead in meads %}
+        <h1>{{mead.name}}</h1>
+        <h3>{{mead.gallons}}</h3>
+    {% empty %}
+        <p>You haven't created any meads yet.</p>
+    {% endfor %}
+
+{% endblock content %}

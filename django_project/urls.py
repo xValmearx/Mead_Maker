@@ -2,14 +2,17 @@ from django.contrib import admin
 from django.urls import path,include
 
 urlpatterns= [
-path("admin/",admin.site.urls),
+    path("admin/",admin.site.urls),
 
-# Pages app
-path("",include("pages.urls")),
+    # Pages app
+    path("",include("pages.urls")),
 
-# Accounts app
-path("accounts/",include("accounts.urls")),
+    # Accounts app
+    path("accounts/",include("accounts.urls")),
 
-# Django authentication system
-path("accounts/",include("django.contrib.auth.urls")),
+    # Django authentication system
+    path("accounts/",include("django.contrib.auth.urls")),
+
+    # Mead app
+    path("mead/", include("recipes.urls")),
 ]
