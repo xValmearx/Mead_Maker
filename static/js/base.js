@@ -1,6 +1,6 @@
 class MeadCard extends HTMLElement {
     connectedCallback() {
-
+        const slug = this.getAttribute("slug");
         const type = this.getAttribute("type") || "";
         const name = this.getAttribute("name") || "Blank";
         const icon = this.getAttribute("icon") || "";
@@ -8,16 +8,20 @@ class MeadCard extends HTMLElement {
 
         if(icon == ""){
             this.innerHTML = `
-            <div class="card ${type}">
+            <a href="/mead/create/${slug}/" class="card-link">
+                <div class="card ${type}">
 
                 <h1>${name}</h1>
 
                 <p>${dialog}</p>
             </div>
+            </a>
+            
         `;
         }
         else{
             this.innerHTML = `
+            <a href="/mead/create/${slug}/" class="card-link">
             <div class="card ${type}">
 
                 <h1>${name}</h1>
@@ -26,6 +30,7 @@ class MeadCard extends HTMLElement {
 
                 <p>${dialog}</p>
             </div>
+            </a>
         `;
         }
 

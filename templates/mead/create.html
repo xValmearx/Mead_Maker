@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+	Create 
+{% endblock title %}
+
+{% block content %}
+    <h1>Create {{ view.kwargs.mead_type|title }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Create Mead</button>
+    </form>
+{% endblock content %}
