@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse_lazy
 
 from .models import Mead
@@ -16,11 +16,24 @@ class MeadListView(LoginRequiredMixin, ListView):
         return Mead.objects.filter(user=self.request.user)
     
 
-class MeadCreateView(CreateView):
+class MeadDetailView(LoginRequiredMixin, DetailView):
+    model = Mead
+    template_name = "mead/detail.html"
+    context_object_name = "mead"
+
+    def get_queryset(self):
+        # Only allow users to view their own meads
+        return Mead.objects.filter(user=self.request.user)
+    
+
+class MeadCreateView(LoginRequiredMixin,CreateView):
     model = Mead
     fields = ["gallons"]
     template_name = "mead/create.html"
     success_url = reverse_lazy("mead_list")
+
+    def get_queryset(self):
+        return Mead.objects.filter(user=self.request.user)
 
     def form_valid(self, form):
         mead = form.save(commit=False)

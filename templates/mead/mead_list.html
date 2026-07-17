@@ -1,20 +1,35 @@
 {% extends "base.html" %}
 
 {% block title %}
-	Your Meads
+    Your Meads
 {% endblock title %}
 
 {% block content %}
 
+<div class="card-grid">
+
     {% for mead in meads %}
 
-        <h1>{{mead.name}}</h1>
-        <h3>{{mead.gallons}}</h3>
+    <a href="{% url 'mead_detail' mead.pk %}" class="card-link">
+        <div class="card">
+
+            <h1>{{ mead.name }}</h1>
+
+            <h3>{{ mead.get_gallons_display }}</h3>
+
+            <p>
+                {{ mead.ingredients|length }} Ingredients
+            </p>
+
+        </div>
+    </a>
 
     {% empty %}
 
         <p>You haven't created any meads yet.</p>
-        
+
     {% endfor %}
+
+</div>
 
 {% endblock content %}

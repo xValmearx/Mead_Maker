@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ mead.name }}</h1>
+
+<p>Batch Size: {{ mead.get_gallons_display }}</p>
+
+<h2>Ingredients</h2>
+
+<ul>
+    {% for name, ingredient in mead.ingredients.items %}
+        <li>
+            {{ name }} -
+            {{ ingredient.amount }}
+            {{ ingredient.unit }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

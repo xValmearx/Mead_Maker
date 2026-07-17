@@ -39,3 +39,32 @@ class MeadCard extends HTMLElement {
 }
 
 customElements.define("mead-card", MeadCard);
+
+
+class UserMeadCard extends HTMLElement {
+
+    connectedCallback() {
+
+        const id = this.getAttribute("id");
+        const name = this.getAttribute("name");
+        const gallons = this.getAttribute("gallons");
+        const ingredients = this.getAttribute("ingredients");
+
+        this.innerHTML = `
+            <a href="/mead/${id}/" class="card-link">
+                <div class="card">
+
+                    <h1>${name}</h1>
+
+                    <h3>${gallons}</h3>
+
+                    <p>${ingredients} Ingredients</p>
+
+                </div>
+            </a>
+        `;
+    }
+
+}
+
+customElements.define("user-mead-card", UserMeadCard);
