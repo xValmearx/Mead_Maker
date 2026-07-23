@@ -50,9 +50,11 @@ class UserMeadCard extends HTMLElement {
         const gallons = this.getAttribute("gallons");
         const ingredients = this.getAttribute("ingredients");
 
+        const type = name.toLocaleLowerCase();
+
         this.innerHTML = `
             <a href="/mead/${id}/" class="card-link">
-                <div class="card">
+                <div class="card ${type}">
 
                     <h1>${name}</h1>
 

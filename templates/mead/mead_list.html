@@ -6,30 +6,29 @@
 
 {% block content %}
 
-<div class="card-grid">
+<div class = "section">
 
-    {% for mead in meads %}
+    <div class="card-grid">
 
-    <a href="{% url 'mead_detail' mead.pk %}" class="card-link">
-        <div class="card">
+        {% for mead in meads %}
 
-            <h1>{{ mead.name }}</h1>
+        <user-mead-card 
+        id = "{{mead.pk}}"
+        name = "{{mead.name}}"
+        gallons = "{{mead.gallons}}"
+        ingredients = "{{ mead.ingredients|length }}"
+        ></user-mead-card>
 
-            <h3>{{ mead.get_gallons_display }}</h3>
+        {% empty %}
 
-            <p>
-                {{ mead.ingredients|length }} Ingredients
-            </p>
+            <p>You haven't created any meads yet.</p>
 
-        </div>
-    </a>
+        {% endfor %}
 
-    {% empty %}
-
-        <p>You haven't created any meads yet.</p>
-
-    {% endfor %}
-
+    </div>
+    
 </div>
+
+
 
 {% endblock content %}

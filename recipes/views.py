@@ -3,7 +3,7 @@ from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse_lazy
 
 from .models import Mead
-from mead_default import RECIPES
+from mead_default import RECIPES, build_ingredients_dict
 
 
 class MeadListView(LoginRequiredMixin, ListView):
@@ -48,16 +48,8 @@ class MeadCreateView(LoginRequiredMixin,CreateView):
         # Give the mead a default name
         mead.name = mead_type.replace("-", " ").title()
 
-        # Build the ingredients JSON
-        ingredients = {}
 
-        for ingredient, data in recipe.items():
-            ingredients[ingredient] = {
-                "amount": data["amount"][mead.gallons],
-                "unit": data["unit"],
-            }
-
-        mead.ingredients = ingredients
+        mead.ingredients = build_ingredients_dict(recipe,mead.gallons)
 
         mead.save()
 
