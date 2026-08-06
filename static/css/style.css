@@ -22,7 +22,7 @@
 
     --font-primary: "Nunito", sans-serif;
 
-    --width-1:2vw;
+    --width-1:100px;
     --width-2:4vw;
     --width-3:8vw;
 
@@ -141,6 +141,8 @@ nav {
 
 .hero h1{
     color: var(--hero-dark);
+
+    font-size: 100px;
 }
 
 .hero.icon{

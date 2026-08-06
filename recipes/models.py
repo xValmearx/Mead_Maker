@@ -18,7 +18,13 @@ class Mead(models.Model):
 
     name = models.CharField(default="Mead",max_length=50)
 
+    equipment = models.JSONField(default=list)
+
     ingredients = models.JSONField(default=list)
+
+    instructions = models.JSONField(default=list)
+
+
 
     gallons = models.IntegerField(
         choices=GALLON_CHOICES,

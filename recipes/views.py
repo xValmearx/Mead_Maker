@@ -3,7 +3,7 @@ from django.views.generic import ListView, CreateView, DetailView
 from django.urls import reverse_lazy
 
 from .models import Mead
-from mead_default import RECIPES, build_ingredients_dict
+from mead_default import RECIPES, build_ingredient_dict, get_instructions, get_equipment
 
 
 class MeadListView(LoginRequiredMixin, ListView):
@@ -49,8 +49,11 @@ class MeadCreateView(LoginRequiredMixin,CreateView):
         mead.name = mead_type.replace("-", " ").title()
 
 
-        mead.ingredients = build_ingredients_dict(recipe,mead.gallons)
+        mead.ingredients = build_ingredient_dict(recipe,mead.gallons)
 
+        mead.instructions = get_instructions(mead_type)
+
+        mead.equipment = get_equipment(mead_type)
         mead.save()
 
         return super().form_valid(form)

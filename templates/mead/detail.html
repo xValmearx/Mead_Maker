@@ -1,21 +1,49 @@
 {% extends "base.html" %}
+{%load static%}
+
 
 {% block content %}
 
-<h1>{{ mead.name }}</h1>
+<div class="section">
 
-<p>Batch Size: {{ mead.get_gallons_display }}</p>
+    <h1>{{ mead.name }} Mead</h1>
 
-<h2>Ingredients</h2>
+    <section class="mead-section">
+        <h2>Equipment</h2>
+        <ul>
+            {% for item in mead.equipment %}
+                <li>{{ item|title }}</li>
+            {% endfor %}
+        </ul>
+    </section>
 
-<ul>
-    {% for name, ingredient in mead.ingredients.items %}
-        <li>
-            {{ name }} -
-            {{ ingredient.amount }}
-            {{ ingredient.unit }}
-        </li>
-    {% endfor %}
-</ul>
+    <section class="mead-section">
+        <h2>Ingredients</h2>
 
+        {% for name, ingredient in mead.ingredients.items %}
+            <div class="ingredient">
+                <span>{{ name|title }}</span>
+                <span>{{ ingredient.amount }} {{ ingredient.unit }}</span>
+            </div>
+        {% endfor %}
+    </section>
+
+    <section class="mead-section">
+        <h2>Instructions</h2>
+
+        {% for section, steps in mead.instructions.items %}
+            <h3>{{ section }}</h3>
+
+            <ol>
+                {% for title, instruction in steps.items %}
+                    <li>
+                        <strong>{{ title }}</strong>
+                        <p>{{ instruction }}</p>
+                    </li>
+                {% endfor %}
+            </ol>
+        {% endfor %}
+    </section>
+
+</div>
 {% endblock %}
