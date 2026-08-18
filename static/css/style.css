@@ -153,3 +153,10 @@ nav {
 
     margin-bottom: 1rem;
 }
+
+
+.center{
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+}

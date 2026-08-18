@@ -24,6 +24,7 @@ class MeadDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         # Only allow users to view their own meads
         return Mead.objects.filter(user=self.request.user)
+
     
 
 class MeadCreateView(LoginRequiredMixin,CreateView):
@@ -53,7 +54,7 @@ class MeadCreateView(LoginRequiredMixin,CreateView):
 
         mead.instructions = get_instructions(mead_type)
 
-        mead.equipment = get_equipment(mead_type)
+        mead.equipment = get_equipment(mead_type,mead.gallons)
         mead.save()
 
         return super().form_valid(form)

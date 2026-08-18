@@ -239,15 +239,14 @@ CIDER_MEAD = {
 # ============================
 # EQUIPMENT
 # ============================
-traditional_equipment = [
-    "Fermentation Bucket",
-    "Airlock",
-    "Hydrometer",
-    "Auto Siphon",
-    "Star San Sanitizer",
-    "Spray Bottle",
-    "Large Stir Spoon",
-]
+traditional_equipment = {
+    "Airlock": "https://www.amazon.com/Molovee-Fermentation-Silicone-Sauerkraut-transparency/dp/B095BXVM7Y/ref=sr_1_4_sspa?dib=eyJ2IjoiMSJ9.SQg5bFZfZBFPqjj-Js5D3ViN9mir9erZftIzkJLXBXFg0cX4SD6tjFPll-yYtW3mbO6J-ERbqov0lECsucAhQTVhe8KlzDZo3Tn_pb4Oh8ARB0wjDKIicJXzCqY-pBS_UyCab1dhBZXWWzzS-u3p9z0cJuYO_fzD4Z9mRewPLxisBB4w-A3NwC8A01sVy-blbbhuCb-jnn49hxWcVqMC118gU3BDxXt9RlLEYguWvfA3KXJEVkcjGxRQbQ_QgbU9fouwp02d_I9XNyHNqslSr1dH-xtinnldwhsBwYlK2o8.6ab9trJLKVwDT9cTPkSF52WzxjYRUHX4sfPL9sY5BVA&dib_tag=se&keywords=3+piece+fermentation+airlock+homebrew&qid=1786944811&sr=8-4-spons&utm_source=chatgpt.com&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+    "Hydrometer": "https://www.amazon.com/Brewers-Elite-Hydrometer-Kombucha-Hardcase/dp/B01CITP03W/ref=sr_1_3?crid=1Z90ASM1HSMF0&dib=eyJ2IjoiMSJ9.ZwxmB5TMoJxSObgl61kDJAB4L-G3rF3wpqcm1Heo07_IFa_e8_llOOoBq0dMyY1e2FrML5vSlABt4GTfk3aYlSmQNVKFMOYjYH4HVBOc-Zj_BPC7JM0O8sggB6jqNi18G2JR_rkjK1m78qdI2N1fl58mkFYWaUI_tgT8gYWcYGFoVnivF7o-l789PsQ4UCB9H4CW7qO8l7TBpc-mdq3iwt-8JTdbDzxhWl6XR0juVnQ.5FVgsrdM35ZCC1uyLgCwCzwY7LCnHAKKfpr9IMAzY58&dib_tag=se&keywords=hydrometer+for+fermenting&qid=1786944995&sprefix=hydrometer+ferm%2Caps%2C150&sr=8-3",
+    "Auto Siphon": "https://www.amazon.com/gp/aw/d/B00CIXXM8O/?_encoding=UTF8&pd_rd_plhdr=t&aaxitk=8c376a06928251a1d7f4f8dcaf4ed06a&hsa_cr_id=0&qid=1786945032&sr=1-2-9e67e56a-6f64-441f-a281-df67fc737124&i=aps&aref=bduVvzmLO0&ref_=sbx_s_sparkle_sbtcd_asin_1_rating&pd_rd_w=cn8aC&content-id=amzn1.sym.8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68%3Aamzn1.sym.8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68&pf_rd_p=8de9b3d5-f5c5-40e9-9b39-d65f08d6ea68&pf_rd_r=QKYK1TRVTCZT4Q9M8HCW&pd_rd_wg=Lt9SD&pd_rd_r=9425146d-36f4-43cc-a074-cdd609ab3a13#customerReviews",
+    "Star San Sanitizer": "https://www.amazon.com/C-Kraus-Star-San-oz/dp/B0114ARHGO/ref=pd_day0_d_sccl_1_4/140-7761712-6668319?pd_rd_w=lXatk&content-id=amzn1.sym.de286d99-05f6-43bf-9d9c-b57de9652232&pf_rd_p=de286d99-05f6-43bf-9d9c-b57de9652232&pf_rd_r=SGKE6E63WXQWRJQFE8Q6&pd_rd_wg=GYWek&pd_rd_r=d080d8d9-f6b2-4f56-bc5a-abf744aa6c23&pd_rd_i=B0114ARHGO&psc=1",
+    "Spray Bottle": "https://www.amazon.com/Chemical-Guys-ACC151-Secondary-Container/dp/B06X6NN4XL/ref=sr_1_16?crid=3PKG2VY3CWYGL&dib=eyJ2IjoiMSJ9.OD_znyUn9fj8eoywJqNX4R1pVSbO-EJ0QdfQswPoxbVtui8xZxH2BKkoXmkzH0qImdLSgMSnJrzyPVC7gMkl2rkxjwJ0lkUl36Pll0h-yLIeImw6e6W2pTMNqTJKDu4hvmeUJPFvELk7dYwoGBCsF63xxchKjYDG0dxnIGW474oiib86fKw82FHskKtrXmQYExR6OThuKW2He_rcQ-I4fUuwK7nr8qMps8u07SGtf24Gk8438oCWDjluk4PyuvZvOGXMf4ArO6LHMLTSMBgj2KOz4iNdZFMPuYh1SziD0Mo._m1AOUEhMUYSJT3c_RyEdklwL2uMwaSd-xTuPNiOEx4&dib_tag=se&keywords=16%2Boz%2Bspray%2Bbottles%2Bmist%2Bsprayer%2Bsingle%2Bpact&nsdOptOutParam=true&qid=1786945328&sprefix=16%2Boz%2Bspray%2Bbottles%2Bmist%2Bsprayer%2Bsingle%2Bpact%2Caps%2C185&sr=8-16&th=1",
+    "Large Stir Spoon": "https://www.amazon.com/Winco-BSON-13-Stainless-Basting-Commercial/dp/B07C5MBRCK/ref=sr_1_8?crid=AV1JYUCADOBS&dib=eyJ2IjoiMSJ9.fr2iHEacn3ycRXAjUB1tgI_K5lPukTtt-aVZLSESG-ITjbzxBQIM7QYHc0-ApE4MU2ELjtns_9U8JKD9ENt4SwWKvscVGqiw2u2BTmEnN6aLhv3sNzc3B0bMRyr07o_yoXMiGILw2qmN1B69-cmCFGfgGX-M-kbolO3WQgxD0B9m4ZryTZpYrxK0_j9kUO91FunJSibfQ0dvQVXjiaTvi81agIltkiOAh7lFSV6SDw7hv4wdDr8td74KzfWd_mm1tPa3od8OQu6Gr-XRP2RKi_3daFYmgXaknuPzDyZgvV0.ICss4Z7mlX018xIixdoVyfFKFnPqT3vSpq1ULmtSCmQ&dib_tag=se&keywords=12+inch+spoon&qid=1786945847&sprefix=12+inch+spoon%2Caps%2C183&sr=8-8",
+}
 
 
 # ============================
@@ -370,5 +369,20 @@ def build_ingredient_dict(recipe, gallons):
 def get_instructions(mead_type:str):
      return globals().get(f"{mead_type}_steps")
 
-def get_equipment(mead_type:str):
-    return globals().get(f"{mead_type}_equipment")
+def get_equipment(mead_type: str, gallons: int):
+    equipment = globals().get(f"{mead_type}_equipment")
+
+    if gallons == 1:
+        bucket = {
+            "1 Gallon Fermentation Bucket": "https://www.amazon.com/FastRack-Fermonster-Airtight-Drilled-Fermenter/dp/B0GCWKNWZL/ref=sr_1_1?crid=3DIMXX9UPJW2J&dib=eyJ2IjoiMSJ9.R12q1np4DC9IRhawmxaeu62HaWw2Wa9gsFLKJIerWU9Gs8pEqzC9HrVek8tTVX7rcYrikxW1kEPXwKkrIGrDUo-XQUdYaWgaHfdAgT9KyMrWe6HWAJvywqhxJsNx3hIYbN5cbraa4eqdVQgcbwB0UHxsiPRlMzBZp-gK1CzkfCY7jU_BWrg9RT01Q6tK5de_VcTJb-wk-iIsVZLgGFLHOutSzQsu6aZR2RT1X_twht0KxTSyQ0N78C97KoQz-14gEP_2iDVQN8tleltrgdRYwWBiNy2klMwDsDUj97Qr1TA.ZUt5w1NvYWEY4cGZdobs88sndH7gxR9JkLIhkR7itoI&dib_tag=se&keywords=fermonster+1+gallon+fermenter&qid=1786949455&sprefix=fermonster+1+gallon%2Caps%2C372&sr=8-1"
+        }
+    elif gallons == 3:
+        bucket = {
+            "3 Gallon Fermentation Bucket": "https://www.amazon.com/FastRack-Fermonster-Airtight-Food-Grade-Fermenter/dp/B07BQ7JTDJ/ref=sr_1_1?crid=2OYH06Y1ZIXH6&dib=eyJ2IjoiMSJ9.PZH-x6LiqCr7CUrLzUyuHXzT7cmQLsPfYz_hjQor2V-mCJGwfrzkuh-jp3oK-LcQhYWpwtgWDeelu0gytfiPbaIcUTWjhEfpa_fzUiwCnMgxEgp34lw_g6hG3jkcByajqEMgXt6vPv5YU8yBx5K7PSlaWwaR5gnZZp8ZQYw7JqBIokuV5dxElpUJyK0Y2J1D_9Mn7oHHB893WlNppW5p8weOYhNU5Kc23Bl6m3FrUiNv2KFPvfxU-PyGrKU7fM89teUMnCFtvt-_aCcY6XciKSDPynMqqtegfECovrsF-04.8Lbgh6_8JBauonQZ1Y-5F49TRDDdtnIcMI-aDqcCoLg&dib_tag=se&keywords=fermonster+3+gallon+fermenter&qid=1786949484&sprefix=fermonster+gallon+fermenter%2Caps%2C246&sr=8-1"
+        }
+    else:
+        bucket = {
+            "6 Gallon Fermentation Bucket": "https://www.amazon.com/FerMonster-Fermenter-Econolock-Drilled-Stopper/dp/B07FV2BMR4/ref=sr_1_2?crid=305MJS6EV8QD4&dib=eyJ2IjoiMSJ9.K2aV9LGwFz94WIwWJBNp7-QtiKRdN4QK2YVkHkE_7uV0kpKa_UfDs3HlAPO3CNf1VLkjg53CMCxTWCSqgsjF7xlj_KR3fGs_j6gbDG3OjUs7Q2aP3qqNYqqdpkx23224Or642VieMR_bNT3K1WhR_lNWrEvjZnbktHtqv9C_SP52fE1Lhgu4iaQiTYoDc7fu6QIVgz7xI_PCU7nQa-kitClmiuVQP9LEQuFlids0zNWuH_PsQyThclLvjoNXs9IFomlKxcVXICR4sjUA1OzDLeIFaOxNYhfOTSRiuDGz93I.CsqZIZmKVrKloqk5yB3Pw376fjYF6bZwq08lDkcJW9k&dib_tag=se&keywords=fermonster+6+gallon+fermenter&qid=1786949504&sprefix=fermonster+6+gallon+fermenter%2Caps%2C194&sr=8-2"
+        }
+
+    return {**bucket, **equipment}

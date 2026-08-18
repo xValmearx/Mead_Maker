@@ -6,16 +6,62 @@
 
 <div class="section">
 
-    <h1>{{ mead.name }} Mead</h1>
+    <h1 class="center">{{ mead.name }} Mead</h1>
 
-    <section class="mead-section">
-        <h2>Equipment</h2>
-        <ul>
-            {% for item in mead.equipment %}
-                <li>{{ item|title }}</li>
-            {% endfor %}
-        </ul>
-    </section>
+<section class="mead-section">
+    <h2>Equipment</h2>
+
+    {% for name, url in mead.equipment.items %}
+    <div class="equipment">
+            <span>{{ name|title }}</span>
+
+            <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+                Buy on Amazon
+            </a>
+        </div>
+    {% endfor %}
+    <br>
+    <h2>Yeast Selection</h2>
+        <div class="equipment">
+            <span>Lalvin 71B. Used for fruit based meads</span>
+
+            <a href="https://www.amazon.com/Craft-Brew-Ingredients-Fermenting-Supplies/dp/B0C32N4LR7/ref=sr_1_8?crid=1GRCKOAPQPZLK&dib=eyJ2IjoiMSJ9.wspnemROuWEZN65HccSgtDk7KT6BkNDS3BAcCvFfhWrENuNzMwjUEEqFOWxb2bY6qvoHe12MfrkciJRBapOaHN4uTB1u6tvk60-cqnN7fVyW_WjNIegkVVv6IX00A6vbwXeGL5E1Eduucrgve6WIG-LNLSL9Zn8QqPtWdMbGaTTaT-PkNpicbZHU7Y9_HSnp.-rB3V9Pie1Zx2xgwlIdBFTehrYQ2mnh_srjP8y14C3E&dib_tag=se&keywords=lavin+71b&qid=1786948280&sprefix=lavin+71b%2Caps%2C153&sr=8-8" 
+            target="_blank" 
+            rel="noopener noreferrer">
+                Buy on Amazon
+            </a>
+        </div>
+        <div class="equipment">
+            <span>Lalvin D-47. Used for honey-forward meads</span>
+
+            <a 
+            href="https://www.amazon.com/Lalvin-Yeast-Homebrew-Making-4-5L-23L/dp/B01CA5R96U/ref=sxin_18_pa_sp_search_thematic_sspa?content-id=amzn1.sym.8eb671a2-a903-4c3a-b962-ebb867a4f8f8%3Aamzn1.sym.8eb671a2-a903-4c3a-b962-ebb867a4f8f8&crid=3KURWF9KKLF9Z&cv_ct_cx=lalvin%2Bd47&keywords=lalvin%2Bd47&pd_rd_i=B01CA5R96U&pd_rd_r=50e5c3a0-938b-495d-9ef5-734e11a9f206&pd_rd_w=c7khX&pd_rd_wg=UrIDK&pf_rd_p=8eb671a2-a903-4c3a-b962-ebb867a4f8f8&pf_rd_r=NJQ2C60V04NXK17C3XN6&qid=1786948555&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=lavin%2Bd47%2Caps%2C217&sr=1-4-6024b2a3-78e4-4fed-8fed-e1613be3bcce-spons&aref=h5yncGvnPT&sp_csd=d2lkZ2V0TmFtZT1zcF9zZWFyY2hfdGhlbWF0aWM&th=1"
+            target="_blank" 
+            rel="noopener noreferrer">
+                Buy on Amazon
+            </a>
+        </div>
+        <div class="equipment">
+            <span>Lalvin K1-V1116. Used for floral meads</span>
+
+            <a 
+            href="https://www.amazon.com/Craft-Brew-Traditional-Ingredients-Fermenting/dp/B0C32CCYZ8/ref=sr_1_7?crid=33BYNWR1J21NY&dib=eyJ2IjoiMSJ9.k-OTOnBig08xV0EX2eX3yxRIarPQRQ78KLyMhLCpnfGyP3AYSbb6g6CsoncxMG0gJhwgIKqmy9jJdOrBVKsEdu52AFiin-pp8slBL4uune2WrY_SDIdhGutcRTLeWev1Y0oxct8zaO9VdW_C8vuRk5qiwrciX2TW2D2FwSS-4Fxa1_Emccg9depyJy61n0fkzIDN1vExOtHLH6zOYZI0j7BUw9cqfcJZeEZJN51q7-bfpPNFzpwRBBzJtYhHbFVy0leEqEidLG-zOTaya-alffcAwE5uaXlt3bV81EXjH90.QNHtP2DpS0nZ2_EpT_oB4cZ-trJBdXaSRz4JJzUULOQ&dib_tag=se&keywords=lalvin%2Bk1-v1116&qid=1786948849&sprefix=lalvin%2Bk1-v1116%2Caps%2C229&sr=8-7&th=1" 
+            target="_blank" 
+            rel="noopener noreferrer">
+                Buy on Amazon
+            </a>
+        </div>
+        <div class="equipment">
+            <span>Lalvin EC-1118. Used for less sweet,hight ABV meads</span>
+
+            <a 
+            href="https://www.amazon.com/Lalvin-EC-1118-Wine-Yeast-Pack/dp/B0BG3GV69Q/ref=sr_1_4_sspa?crid=1VL0VL02ED6R8&dib=eyJ2IjoiMSJ9.NBw5EACE8UZtCk1bUYciyimgGKpdkUGaMW09wOaKc9Jdi3JicHmLjqBAgZTL1cFK9Iwi3edlKXCGhHkbD5WBrzCL5QVAHzXvne-6gjhiTcCHmlgi0gm60IiNeXE6Ps6owPO9xwCwEjPkn1VUwl8ScnFpfrlobnmdhQmfyKOa97O3p0dqyY8InLZN8d9dSaF_h9SBIOXpr7Yc5ME9bxtjivZSWv-BRjBTNTUbJ90gaUSf_9Pg_wrEChf-4wOHpRfLQA3nLwUEeIsZwxdBAgj_NgjSjeyHgffbiEh9h0ofbTg.KvyO6jQpRFRWY4w2lOy0CopI46ezOgRCxx4evMk0G8U&dib_tag=se&keywords=Lalvin+EC-1118&qid=1786949334&rdc=1&sprefix=lalvin+ec-1118%2Caps%2C342&sr=8-4-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1"
+            target="_blank" 
+            rel="noopener noreferrer">
+                Buy on Amazon
+            </a>
+        </div>
+</section>
 
     <section class="mead-section">
         <h2>Ingredients</h2>
