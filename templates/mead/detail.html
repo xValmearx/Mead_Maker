@@ -4,9 +4,75 @@
 
 {% block content %}
 
-<div class="section">
+<form style="display: none;">
+    {% csrf_token %}
+</form>
 
-    <h1 class="center">{{ mead.name }} Mead</h1>
+<div class="section flex">
+    <div class="half-section mead-section padding-1">
+
+        <h2 class="center">{{ mead.name }} Mead</h2>
+
+        <h3>
+            Original Gravity:
+            <span id="OriginalGravity">{{ mead.original_gravity }}</span>
+        </h3>
+
+        <h3>
+            Final Gravity:
+            <span id="FinalGravity">{{ mead.final_gravity }}</span>
+        </h3>
+    </div> 
+    <!-- half section -->
+
+    <div class="half-section mead-section padding-1">
+
+        <h2>Update Field</h2>
+        <div class="padding-1">
+
+            <input
+                type="number"
+                id="original_gravity"
+                step="0.001"
+                min="0"
+                placeholder="1.000"
+            >
+
+            <button 
+                id="AddOriginalGravityBtn"
+                type="button"
+                onclick="update_original_gravity()">
+                Add Original Gravity
+            </button>
+
+        </div>
+
+
+        <div class="padding-1">
+
+            <input
+                type="number"
+                id="final_gravity"
+                step="0.001"
+                min="0"
+                placeholder="1.000"
+            >
+
+            <button 
+                id="AddFinalGravityBtn"
+                type="button"
+                onclick="update_final_gravity()">
+                Add Final Gravity
+            </button>
+
+        </div>
+                <h3>Start Fermenting</h3>
+                
+            </div>
+        </div>
+
+
+<div class="section">
 
 <section class="mead-section">
     <h2>Equipment</h2>
@@ -20,8 +86,11 @@
             </a>
         </div>
     {% endfor %}
-    <br>
-    <h2>Yeast Selection</h2>
+</section>
+
+<section class="mead-section">
+
+        <h2>Yeast Selection</h2>
         <div class="equipment">
             <span>Lalvin 71B. Used for fruit based meads</span>
 
@@ -63,7 +132,7 @@
         </div>
 </section>
 
-    <section class="mead-section">
+<section class="mead-section">
         <h2>Ingredients</h2>
 
         {% for name, ingredient in mead.ingredients.items %}
@@ -72,24 +141,130 @@
                 <span>{{ ingredient.amount }} {{ ingredient.unit }}</span>
             </div>
         {% endfor %}
-    </section>
+</section>
 
-    <section class="mead-section">
-        <h2>Instructions</h2>
+    <section>
 
         {% for section, steps in mead.instructions.items %}
+        <div class="mead-section">
             <h3>{{ section }}</h3>
-
-            <ol>
-                {% for title, instruction in steps.items %}
-                    <li>
-                        <strong>{{ title }}</strong>
-                        <p>{{ instruction }}</p>
-                    </li>
-                {% endfor %}
-            </ol>
+                <ol>
+                    {% for title, instruction in steps.items %}
+                        <li>
+                            <strong>{{ title }}</strong>
+                            <p>{{ instruction }}</p>
+                        </li>
+                    {% endfor %}
+                </ol>
+        </div>
         {% endfor %}
     </section>
 
+    <form method="POST" action="{% url 'mead_delete' mead.pk %}">
+        {% csrf_token %}
+
+        <button class = 'button-black' type="submit"
+                onclick="return confirm('Are you sure you want to delete this mead?');">
+            Delete This Mead
+        </button>
+    </form>
+
 </div>
+
+
+<script>
+    function getCSRFToken() {
+        return document.querySelector('[name=csrfmiddlewaretoken]').value;
+    }
+
+    const currentURL = "{% url 'mead_detail' mead.pk %}";
+
+    async function fetchData(url, dataDict) {
+        try {
+            const formBody = new URLSearchParams(dataDict).toString();
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': getCSRFToken(),
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formBody
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.error || 'Something went wrong');
+            }
+
+            return data;
+
+        } catch (error) {
+            console.error('Error in fetchData:', error);
+            throw error;
+        }
+    }
+
+
+    async function update_original_gravity() {
+
+        const gravityInput = document.getElementById('original_gravity');
+        const gravityStats = document.getElementById('OriginalGravity');
+
+        try {
+
+            const data = await fetchData(currentURL, { 
+                action: 'update_original_gravity',
+                amount: gravityInput.value
+            });
+
+
+            if (data.success) {
+
+                if (data.original_gravity !== undefined) {
+                    gravityStats.textContent = data.original_gravity;
+                }
+
+                gravityInput.value = "";
+
+            }
+
+        } catch (error) {
+            alert('Failed to update Original Gravity: ' + error.message);
+        }
+    }
+
+    async function update_final_gravity() {
+
+        const gravityInput = document.getElementById('final_gravity');
+        const gravityStats = document.getElementById('FinalGravity');
+
+        try {
+
+            const data = await fetchData(currentURL, { 
+                action: 'update_final_gravity',
+                amount: gravityInput.value
+            });
+
+
+            if (data.success) {
+
+                if (data.final_gravity !== undefined) {
+                    gravityStats.textContent = data.final_gravity;
+                }
+
+                gravityInput.value = "";
+
+            }
+
+        } catch (error) {
+            alert('Failed to update Final Gravity: ' + error.message);
+        }
+    }
+
+
+
+</script>
+
 {% endblock %}

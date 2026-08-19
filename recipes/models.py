@@ -24,12 +24,15 @@ class Mead(models.Model):
 
     instructions = models.JSONField(default=dict)
 
-
-
     gallons = models.IntegerField(
         choices=GALLON_CHOICES,
         default=1
     )
+
+    original_gravity = models.FloatField(default=0)
+    final_gravity = models.FloatField(default=0)
+
+    fermentation_end_date = models.DateField(null=True, blank=True)
 
 def __str__(self):
     return f"{self.name} ({self.gallons} gal)"

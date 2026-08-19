@@ -1,6 +1,8 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import ListView, CreateView, DetailView
+from django.views.generic import ListView, CreateView, DetailView, DeleteView
 from django.urls import reverse_lazy
+from django.http import JsonResponse
+
 
 from .models import Mead
 from mead_default import RECIPES, build_ingredient_dict, get_instructions, get_equipment
@@ -24,7 +26,62 @@ class MeadDetailView(LoginRequiredMixin, DetailView):
     def get_queryset(self):
         # Only allow users to view their own meads
         return Mead.objects.filter(user=self.request.user)
+    
+    def post(self, request, *args, **kwargs):
 
+        mead = self.get_object()
+
+        action = request.POST.get("action")
+
+
+        if action == "update_original_gravity":
+
+            amount = request.POST.get("amount")
+
+            if not amount:
+                return JsonResponse({
+                    "success": False,
+                    "error": "No gravity provided"
+                }, status=400)
+
+
+            mead.original_gravity = amount
+            mead.save()
+
+
+            return JsonResponse({
+                "success": True,
+                "original_gravity": mead.original_gravity
+            })
+
+
+        elif action == "update_final_gravity":
+
+            amount = request.POST.get("amount")
+
+            if not amount:
+                return JsonResponse({
+                    "success": False,
+                    "error": "No gravity provided"
+                }, status=400)
+
+
+            mead.final_gravity = amount
+            mead.save()
+
+
+            return JsonResponse({
+                "success": True,
+                "final_gravity": mead.final_gravity
+            })
+
+
+        return JsonResponse({
+            "success": False,
+            "error": "Invalid action"
+        }, status=400)
+
+    
     
 
 class MeadCreateView(LoginRequiredMixin,CreateView):
@@ -58,3 +115,13 @@ class MeadCreateView(LoginRequiredMixin,CreateView):
         mead.save()
 
         return super().form_valid(form)
+
+class MeadDeleteView(LoginRequiredMixin,DeleteView):
+
+    model = Mead
+    success_url = reverse_lazy("mead_list")
+
+    def get_queryset(self):
+        return Mead.objects.filter(user=self.request.user)
+
+    

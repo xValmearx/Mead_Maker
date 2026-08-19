@@ -4,6 +4,8 @@
     padding: 25px;
     border-radius: var(--border-radius-1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    gap:20px;
 }
 
 /* First section */
@@ -16,10 +18,12 @@
     background-color: var(--hero-dark);
 }
 
-/* Third section */
+/* Second section */
 .mead-section:nth-of-type(3) {
     background-color: var(--hero-primary);
 }
+
+
 
 
 /* Section headings */
