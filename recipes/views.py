@@ -36,7 +36,7 @@ class MeadDetailView(LoginRequiredMixin, DetailView):
 
         if action == "update_original_gravity":
 
-            amount = request.POST.get("amount")
+            amount = float(request.POST.get("amount"))
 
             if not amount:
                 return JsonResponse({
@@ -55,9 +55,26 @@ class MeadDetailView(LoginRequiredMixin, DetailView):
             })
 
 
+        elif action == "add_fermentation_end_date":
+            mead.add_fermentation_end_date()
+
+            return JsonResponse({
+                "success": True,
+                "date": mead.fermentation_end_date.strftime("%m/%d/%Y")
+            })
+
+        elif action == "calc_abv":
+            mead.calculate_abv()
+
+            return JsonResponse({
+                "success": True,
+                "alcohol_by_volume": mead.alcohol_by_volume
+            })
+
+
         elif action == "update_final_gravity":
 
-            amount = request.POST.get("amount")
+            amount = float(request.POST.get("amount"))
 
             if not amount:
                 return JsonResponse({

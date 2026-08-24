@@ -19,6 +19,9 @@
     
     --hero-primary: #b96c14;
     --hero-dark: #874e0d;
+    --hero-dark-2:rgb(108, 63, 11);
+    --hero-light:#e7881b;
+
 
     --font-primary: "Nunito", sans-serif;
 
@@ -71,10 +74,10 @@ nav {
     padding-left: var(--pading-1);
 
 
-    background-color: var(--color-2);
+    background-color: var(--hero-dark);
  
-    border: solid var(--color-2) var(--border-size-1);
-    border-bottom: solid var(--color-3) var(--border-size-2);
+    border: solid var(--hero-dark) var(--border-size-1);
+    border-bottom: solid var(--hero-dark-2) var(--border-size-2);
     border-radius: var(--border-radius-1);
 
     position: fixed;
@@ -177,4 +180,53 @@ nav {
 
 .padding-1{
     padding:var(--pading-1);
+}
+
+.width-100{
+    width: 100%;
+}
+
+
+.mead-button {
+    /* Size / spacing */
+    display: inline-block;
+    padding: var(--pading-1) var(--padding-2);
+
+    /* Text */
+    text-decoration: none;
+    color: var(--color-1);
+    font: inherit;
+
+    /* Remove browser button defaults */
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* Button appearance */
+    background: var(--hero-primary);
+    cursor: pointer;
+
+    /* Shape */
+    border-radius: var(--border-radius-1);
+
+    /* Shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Animation */
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.mead-button:hover {
+    background-color: #ecaf2b;
+    box-shadow: 0 6px 16px rgba(236, 175, 43, 0.25);
+    transform: translateY(-2px);
+}
+
+.mead-button:focus,
+.mead-button:focus-visible {
+    outline: none;
 }

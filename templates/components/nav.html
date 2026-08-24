@@ -1,22 +1,22 @@
 <nav>
-    <a class="button-black" href="{% url 'home' %}">Home</a>
+    <a class="mead-button" href="{% url 'home' %}">Home</a>
 
     {% if user.is_authenticated %}
 
-    <a class="button-black" href="{% url 'mead_list' %}">
+    <a class="mead-button" href="{% url 'mead_list' %}">
             My Meads
         </a>
 
         <form action="{% url 'logout' %}" method="post">
             {% csrf_token %}
-            <button class="button-black" type="submit">Log Out</button>
+            <button class="mead-button" type="submit">Log Out</button>
         </form>
 
 
 
     {% else %}
-        <a class="button-black" href="{% url 'login' %}">Log In</a>
-        <a class="button-black" href="{% url 'signup' %}">Sign Up</a>
+        <a class="mead-button" href="{% url 'login' %}">Log In</a>
+        <a class="mead-button" href="{% url 'signup' %}">Sign Up</a>
 
     {% endif %}
 </nav>
