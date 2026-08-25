@@ -13,32 +13,42 @@
 
         <h2 class="center">{{ mead.name }} Mead</h2>
 
-        <h3>
-            Original Gravity:
+        <h3 class="stat-row">
+            <span class="stat-label">Original Gravity:</span>
             <span id="OriginalGravity">{{ mead.original_gravity }}</span>
         </h3>
 
-        <h3>
-            Final Gravity:
+        <h3 class="stat-row">
+            <span class="stat-label">Final Gravity:</span>
             <span id="FinalGravity">{{ mead.final_gravity }}</span>
         </h3>
 
-        <h3>
-            Alcohol By Volume:
+        <h3 class="stat-row">
+            <span class="stat-label">Alcohol By Volume:</span>
             <span id="ABV">{{ mead.alcohol_by_volume }}</span>
         </h3>
 
-        <h3>
-            Fermentation End Date:
-            <span id="FermentationEndDate">{{mead.fermentation_end_date}}</span>
+        <h3 class="stat-row">
+            <span class="stat-label">Fermentation End Date:</span>
+            <span id="FermentationEndDate">{{ mead.fermentation_end_date }}</span>
         </h3>
-    </div> 
+    </div>
     <!-- half section -->
 
+
+    
     <div class="half-section mead-section padding-1">
 
-        <h2>Update Field</h2>
-        <div class="padding-1">
+        <h2 class="center">Update Field</h2>
+
+        <div class="stat-row">
+            <button 
+                class="mead-button stat-label"
+                id="AddOriginalGravityBtn"
+                type="button"
+                onclick="update_original_gravity()">
+                Add Original Gravity
+            </button>
 
             <input
                 type="number"
@@ -47,19 +57,17 @@
                 min="0"
                 placeholder="1.000"
             >
-
-            <button 
-            class="mead-button"
-                id="AddOriginalGravityBtn"
-                type="button"
-                onclick="update_original_gravity()">
-                Add Original Gravity
-            </button>
-
         </div>
 
 
-        <div class="padding-1">
+        <div class="stat-row">
+            <button 
+                class="mead-button stat-label"
+                id="AddFinalGravityBtn"
+                type="button"
+                onclick="update_final_gravity()">
+                Add Final Gravity
+            </button>
 
             <input
                 type="number"
@@ -68,36 +76,27 @@
                 min="0"
                 placeholder="1.000"
             >
-
-            <button 
-            class="mead-button"
-                id="AddFinalGravityBtn"
-                type="button"
-                onclick="update_final_gravity()">
-                Add Final Gravity
-            </button>
-
         </div>
 
-
-        <div class="padding-1">
+        <div class="stat-row">
             <button 
-                class="mead-button"
+                class="mead-button stat-label"
                 onclick="calc_abv()"> 
                 Calculate ABV
             </button>
         </div>
 
-        <div class="padding-1">
+        <div class="stat-row">
             <button 
-                class="mead-button"
+                class="mead-button stat-label"
                 onclick="start_fermentation()"> 
                 Start Fermenting
             </button>
         </div>
-                
-            </div>
-        </div>
+    </div>
+    <!-- half section -->
+
+</div>
 
 
 <div class="section">
@@ -233,7 +232,6 @@
             throw error;
         }
     }
-
 
     async function update_original_gravity() {
 

@@ -20,7 +20,7 @@
     --hero-primary: #b96c14;
     --hero-dark: #874e0d;
     --hero-dark-2:rgb(108, 63, 11);
-    --hero-light:#e7881b;
+    --hero-light:#ecaf2b;
 
 
     --font-primary: "Nunito", sans-serif;
@@ -84,36 +84,6 @@ nav {
     top: 0;
     z-index: 1000;
 }
-
-.button-black{
-    display: inline-block;
-
-    padding: var(--pading-1) var(--padding-2);
-
-    text-decoration: none;
-    color: var(--color-4);
-    font: inherit;
-
-    background: var(--color-1);
-    cursor: pointer;
-
-    border: var(--border-size-1) solid var(--color-4);
-    border-bottom: var(--border-size-2) solid var(--color-4);
-    border-radius: var(--border-radius-1);
-
-    transition: all 0.15s ease;
-}
-
-.button-black:hover{
-    transform: translateY(2px);
-    border-bottom-width: var(--border-size-1);
-}
-
-.button-black:active{
-    transform: translateY(4px);
-    border-bottom-width: var(--border-size-1);
-}
-
 
 
 
@@ -186,7 +156,21 @@ nav {
     width: 100%;
 }
 
+.gap-30{
+    gap: 30px;
+}
 
+.stat-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.stat-label {
+    width: 220px;
+    flex-shrink: 0;
+}
 .mead-button {
     /* Size / spacing */
     display: inline-block;
@@ -229,4 +213,64 @@ nav {
 .mead-button:focus,
 .mead-button:focus-visible {
     outline: none;
+}
+
+
+
+
+.stat-row input[type="number"] {
+    width: 100px;
+    height: 42px;
+
+    padding: 8px 12px;
+
+    font-family: var(--font-primary);
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+
+    color: var(--color-4);
+    background-color: var(--color-1);
+
+    border: var(--border-size-1) solid var(--color-2);
+    border-radius: var(--border-radius-1);
+
+    outline: none;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.stat-row input[type="number"]:hover {
+    border-color: var(--hero-light);
+    box-shadow: 0 6px 16px rgba(236, 175, 43, 0.25);
+}
+
+.stat-row input[type="number"]:focus {
+    background-color: var(--color-1);
+    border-color: var(--hero-primary);
+
+    box-shadow:
+        0 0 0 3px rgba(185, 108, 20, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.stat-row input[type="number"]::placeholder {
+    color: var(--color-3);
+    font-weight: 500;
+}
+
+
+.stat-row input[type="number"]::-webkit-inner-spin-button,
+.stat-row input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.stat-row input[type="number"] {
+    -moz-appearance: textfield;
 }

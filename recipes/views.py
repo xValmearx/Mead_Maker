@@ -110,6 +110,14 @@ class MeadCreateView(LoginRequiredMixin,CreateView):
     def get_queryset(self):
         return Mead.objects.filter(user=self.request.user)
 
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context["mead_type"] = self.kwargs["mead_type"]
+
+        return context
+
     def form_valid(self, form):
         mead = form.save(commit=False)
 

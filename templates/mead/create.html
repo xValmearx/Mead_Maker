@@ -1,17 +1,52 @@
 {% extends "base.html" %}
 
 {% block title %}
-	Create 
+    Create
 {% endblock title %}
 
 {% block content %}
-    <h1>Create {{ view.kwargs.mead_type|title }}</h1>
 
-    <form method="post">
-        {% csrf_token %}
+<section class="section">
 
-        {{ form.as_p }}
 
-        <button type="submit">Create Mead</button>
-    </form>
+    <h1 class="center">
+        Create {{ view.kwargs.mead_type|title }}
+    </h1>
+
+      {{slug}}
+
+
+    <div class="card-grid">
+
+        <form method="post">
+            {% csrf_token %}
+
+            <gallon-card
+                gallons="1"
+                type={{mead_type}} >
+            </gallon-card>
+        </form>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <gallon-card
+                gallons="3"
+                type={{mead_type}}>
+            </gallon-card>
+        </form>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <gallon-card
+                gallons="5"
+                type={{mead_type}}>
+            </gallon-card>
+        </form>
+
+    </div>
+
+</section>
+
 {% endblock content %}

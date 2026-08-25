@@ -52,6 +52,8 @@ class UserMeadCard extends HTMLElement {
 
         const type = name.toLocaleLowerCase();
 
+        const icon = `/static/icons/${type}.svg`;
+
         this.innerHTML = `
             <a href="/mead/${id}/" class="card-link">
                 <div class="card ${type}">
@@ -59,6 +61,12 @@ class UserMeadCard extends HTMLElement {
                     <h1>${name}</h1>
 
                     <h3>${gallons}</h3>
+
+                    <img
+                    class="card-icon"
+                    src="${icon}"
+                    alt="${type} icon"
+                >
 
                     <p>${ingredients} Ingredients</p>
 
@@ -70,3 +78,41 @@ class UserMeadCard extends HTMLElement {
 }
 
 customElements.define("user-mead-card", UserMeadCard);
+
+
+
+
+class GallonCard extends HTMLElement {
+    connectedCallback() {
+        const gallons = this.getAttribute("gallons") || "1";
+        const type = this.getAttribute("type") || "";
+
+        const icon = `/static/icons/${type}.svg`;
+        const label = gallons == "1"
+            ? "Gallon"
+            : "Gallons";
+
+        this.innerHTML = `
+            <button
+                type="submit"
+                name="gallons"
+                value="${gallons}"
+                class="card ${type}"
+            >
+                <h1>${gallons} ${label}</h1>
+
+                <img
+                    class="card-icon"
+                    src="${icon}"
+                    alt="${type} icon"
+                >
+
+                <p>
+                    Create a ${gallons} ${label.toLowerCase()} batch
+                </p>
+            </button>
+        `;
+    }
+}
+
+customElements.define("gallon-card", GallonCard);
