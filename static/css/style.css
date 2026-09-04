@@ -217,6 +217,53 @@ nav {
 
 
 
+.dark-button {
+    /* Size / spacing */
+    display: inline-block;
+    padding: var(--pading-1) var(--padding-2);
+
+    /* Text */
+    text-decoration: none;
+    color: var(--color-1);
+    font: inherit;
+
+    /* Remove browser button defaults */
+    border: none;
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+
+    /* Button appearance */
+    background: var(--hero-dark);
+    cursor: pointer;
+
+    /* Shape */
+    border-radius: var(--border-radius-1);
+
+    /* Shadow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    /* Animation */
+    transition:
+        box-shadow 0.2s ease,
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.dark-button:hover {
+    background-color: #ecaf2b;
+    box-shadow: 0 6px 16px rgba(236, 175, 43, 0.25);
+    transform: translateY(-2px);
+}
+
+.dark-button:focus,
+.dar-button:focus-visible {
+    outline: none;
+}
+
+
+
+
 
 .stat-row input[type="number"] {
     width: 100px;

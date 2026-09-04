@@ -1,17 +1,71 @@
 {% extends "base.html" %}
 
 {% block title %}
-    Log In
+Log In
 {% endblock title %}
 
 {% block content %}
-    <h2>Log In</h2>
 
-    <form method="POST">
+<div class="section flex">
+
+<div class="half-section mead-section padding-1 signup-section">
+
+    <h2 class="center">Sign In</h2>
+
+    <form method="POST" class="signup-form">
+
         {% csrf_token %}
 
-        {{ form.as_p }}
+        {% if form.non_field_errors %}
+            <div class="form-error">
+                {{ form.non_field_errors }}
+            </div>
+        {% endif %}
 
-    <button type="submit">Log In</button>
+
+        <div class="form-field">
+
+            <label for="{{ form.username.id_for_label }}">
+                Username
+            </label>
+
+            {{ form.username }}
+
+            {% for error in form.username.errors %}
+                <span class="form-error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+        </div>
+
+
+        <div class="form-field">
+
+            <label for="{{ form.password.id_for_label }}">
+                Password
+            </label>
+
+            {{ form.password }}
+
+            {% for error in form.password.errors %}
+                <span class="form-error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+
+        </div>
+
+
+        <button
+            class="dark-button width-100"
+            type="submit">
+            Sign In
+        </button>
+
     </form>
+
+</div>
+</div>
+
 {% endblock content %}
